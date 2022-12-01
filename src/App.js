@@ -1,25 +1,72 @@
-import logo from './logo.svg';
 import './App.css';
+import './Theme/AppTheme.css'
+import MainRouter from './Components/MainRouter/MainRouter';
+import Login from './Components/Login/Login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Component } from 'react';
+import { connect } from 'react-redux';
+
+
+
+class App extends  Component{
+
+  constructor(props) {
+    super(props);
+
+    props.setUserData(getLocalUserData());
+
+  }
+
+  render(){
+    return (
+
+      <div className=" a-wrapper">
+          {
+            (this.props.user.data.status =="loggedIn")? 
+              <MainRouter />
+            :(this.props.user.data.status =="loggedOut")? 
+              <Login />
+            :(this.props.user.data.status =="toRegister")? 
+              <Login />
+            :
+            <div></div>
+
+          }
+      </div>
+    )
+
+  }
+
 }
 
-export default App;
+
+let userDataStr = "";
+function getLocalUserData(){
+    userDataStr = window.localStorage.getItem("userData");
+
+    if(userDataStr){
+        return JSON.parse(userDataStr);
+    }
+    else{
+        return {status:"toRegister",user_id:"",store_id:""};
+    }
+}
+
+function mapStateToProps(state){
+
+  return{
+    user: state.user
+  }
+}
+
+function mapDispatchToProps(dispatch){
+
+  return {
+    setUserData: (data) => dispatch({
+        type:"user/setUserData",
+        payload:{data:data}
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
