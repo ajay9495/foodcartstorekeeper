@@ -55,7 +55,7 @@ export default function useRegisterLogic(){
     function validate(){
 
 
-        window.open("https://www.w3schools.com");
+        window.open("intent://scan/#Intent;scheme=zxing;package=com.example.instakart;end");
 
         
         // v_isValid = true;
