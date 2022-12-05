@@ -54,7 +54,6 @@ export default function useRegisterLogic(){
     let v_isValid = true;
     function validate(){
 
-        alert("hello alert");
 
         window.open("https://www.w3schools.com");
 
