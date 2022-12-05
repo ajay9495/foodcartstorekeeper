@@ -53,26 +53,28 @@ export default function useRegisterLogic(){
 
     let v_isValid = true;
     function validate(){
+
+        alert("hello alert")
         
-        v_isValid = true;
-        setState((prevState)=>{
+        // v_isValid = true;
+        // setState((prevState)=>{
 
-            return prevState.map((item)=>{
+        //     return prevState.map((item)=>{
 
-                if(item.id == 'password'){
-                    return validatePassword(item);
-                }   
-                else if(item.id == 'phone'){
-                    return validatePhone(item)
-                }
-                else{
-                    return {...item};
-                }
+        //         if(item.id == 'password'){
+        //             return validatePassword(item);
+        //         }   
+        //         else if(item.id == 'phone'){
+        //             return validatePhone(item)
+        //         }
+        //         else{
+        //             return {...item};
+        //         }
 
-            })
-        });
+        //     })
+        // });
 
-        submit(v_isValid);
+        // submit(v_isValid);
     }
 
 
