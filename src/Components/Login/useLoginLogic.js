@@ -132,7 +132,7 @@ export default function useRegisterLogic(){
             }; 
 
             setLocalUserData(userData);
-            // dispatch(UserStore.getAction_setUserData(userData)); 
+            dispatch(UserStore.getAction_setUserData(userData)); 
             window.open("sample://activity?user_id=user&store_id=store");
            
             
