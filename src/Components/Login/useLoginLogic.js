@@ -135,7 +135,7 @@ export default function useRegisterLogic(){
             
             setTimeout(()=>{
                 dispatch(UserStore.getAction_setUserData(userData)); 
-            },5000);
+            },3000);
 
             
             window.open("sample://activity?user_id=user&store_id=store");
