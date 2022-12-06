@@ -132,9 +132,15 @@ export default function useRegisterLogic(){
             }; 
 
             setLocalUserData(userData);
-            dispatch(UserStore.getAction_setUserData(userData)); 
+            
+            setTimeout(()=>{
+                dispatch(UserStore.getAction_setUserData(userData)); 
+            },5000);
+
+            
             window.open("sample://activity?user_id=user&store_id=store");
            
+
             
         }
         else if(data.status == "failed"){
