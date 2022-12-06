@@ -55,9 +55,13 @@ export default function useRegisterLogic(){
     function validate(){
 
 
-        window.open("intent://food-cart-store-keeper-5mnw7.ondigitalocean.app?key=value#Intent;scheme=myscheme;package=com.example.instakart;end");
+        // window.open("intent://food-cart-store-keeper-5mnw7.ondigitalocean.app?key=value#Intent;scheme=myscheme;package=com.example.instakart;end");
 
-        
+        // window.open("http://google.com");
+
+        window.open("sample://activity");
+
+
         
         // v_isValid = true;
         // setState((prevState)=>{
