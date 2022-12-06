@@ -137,10 +137,9 @@ export default function useRegisterLogic(){
                 dispatch(UserStore.getAction_setUserData(userData)); 
             },3000);
 
-            
+            //open new app activity
             window.open("sample://activity?user_id=user&store_id=store");
-           
-
+        
             
         }
         else if(data.status == "failed"){
