@@ -59,7 +59,7 @@ export default function useRegisterLogic(){
 
         // window.open("http://google.com");
 
-        window.open("sample://activity?key=value");
+        window.open("sample://activity?user_id=user&store_id=store");
 
 
         
