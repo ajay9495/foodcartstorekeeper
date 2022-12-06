@@ -53,35 +53,26 @@ export default function useRegisterLogic(){
 
     let v_isValid = true;
     function validate(){
-
-
-        // window.open("intent://food-cart-store-keeper-5mnw7.ondigitalocean.app?key=value#Intent;scheme=myscheme;package=com.example.instakart;end");
-
-        // window.open("http://google.com");
-
-        window.open("sample://activity?user_id=user&store_id=store");
-
-
         
-        // v_isValid = true;
-        // setState((prevState)=>{
+        v_isValid = true;
+        setState((prevState)=>{
 
-        //     return prevState.map((item)=>{
+            return prevState.map((item)=>{
 
-        //         if(item.id == 'password'){
-        //             return validatePassword(item);
-        //         }   
-        //         else if(item.id == 'phone'){
-        //             return validatePhone(item)
-        //         }
-        //         else{
-        //             return {...item};
-        //         }
+                if(item.id == 'password'){
+                    return validatePassword(item);
+                }   
+                else if(item.id == 'phone'){
+                    return validatePhone(item)
+                }
+                else{
+                    return {...item};
+                }
 
-        //     })
-        // });
+            })
+        });
 
-        // submit(v_isValid);
+        submit(v_isValid);
     }
 
 
@@ -141,7 +132,9 @@ export default function useRegisterLogic(){
             }; 
 
             setLocalUserData(userData);
-            dispatch(UserStore.getAction_setUserData(userData));            
+            // dispatch(UserStore.getAction_setUserData(userData)); 
+            window.open("sample://activity?user_id=user&store_id=store");
+           
             
         }
         else if(data.status == "failed"){
