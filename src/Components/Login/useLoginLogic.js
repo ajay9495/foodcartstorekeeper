@@ -138,7 +138,7 @@ export default function useRegisterLogic(){
             },3000);
 
             //open new app activity
-            window.open("sample://activity?user_id=user&store_id=store");
+            window.open("sample://activity?user_id="+payload.id+"&store_id="+payload.store_id);
         
             
         }
