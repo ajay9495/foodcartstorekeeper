@@ -9,15 +9,14 @@ import AddIcon from '@mui/icons-material/AddOutlined';
 import KartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ArrowIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import { useNavigate } from 'react-router-dom'
+import useSharedConfig from '../../../../SharedModules/SharedConfig/SharedConfig'
+
+
 export default function HeaderContent(arg) {
 
   
   let navigateTo = useNavigate();
-
-
-
-
-
+  let {config} = useSharedConfig();
 
   function callToggleOverlay(){
     arg.props.closeSearchResult()
@@ -28,10 +27,11 @@ export default function HeaderContent(arg) {
   return (
 
         <div className="px-2 header-content-wrapper">
-            <div className='gridSub '>   
+            <div className='gridSub gridLeft'> 
+                
               <ArrowIcon 
                 sx={{fontSize:20, color:'#457848'}} 
-                onClick={()=>{ navigateTo('/') }}
+                onClick={()=>{ navigateTo(config.ROOT_PATH) }}
                 />
               <Typography sx={{color:'#457848', fontSize:20, fontWeight:1000,marginLeft:'10px'}} >
                 Cart Details

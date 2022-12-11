@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import useOrderDetailsApi from "./useOrderDetailsApi"
 import useSharedLibrary from "../../SharedModules/SharedLibrary/useSharedLibrary";
 import {useLocation} from 'react-router-dom';
+import useSharedConfig from "../../SharedModules/SharedConfig/SharedConfig";
 
 export default function useOrderDetailsLogic(){
 
@@ -13,6 +14,7 @@ export default function useOrderDetailsLogic(){
     const {api} = useOrderDetailsApi();
     const {sharedLibrary} = useSharedLibrary();
     let location = useLocation();
+    let {config} = useSharedConfig();
 
 
     const ORDER_ID = location.state.order_id;
@@ -36,18 +38,18 @@ export default function useOrderDetailsLogic(){
 
 
     }
-
+ 
     useEffect(()=>{
 
         api.getOrderPlacedDetails(ORDER_ID)
         .then((data)=>{     processApiData(data)   })
-        .catch((err)=>{     console.log(err)        });
+        .catch((err)=>{     api.processApiError(err)        });
 
     },[]);
 
 
 
-    return{state};
+    return{state,config};
 }
 
 

@@ -79,7 +79,7 @@ export default function ListItem({item,change,config}) {
                 <div className='bo pull-bottom'>
                     <Col classList={'gy-4'}>
                         <Button onClick={(e)=>{ change.changeStatus(item.order_id) }}  color='success' variant={'contained'}>Fulfilled</Button>
-                        <Button onClick={(e)=>{ change.navigateTo('/OrderDetails', {state:{order_id: item.order_id }}) }}  color='success' variant={'outlined'}>Details</Button>
+                        <Button onClick={(e)=>{ change.navigateTo(config.ROOT_PATH+'/OrderDetails', {state:{order_id: item.order_id }}) }}  color='success' variant={'outlined'}>Details</Button>
                     </Col>
                 </div>
             </Col>
