@@ -21,8 +21,8 @@ export default function useSharedConfig(){
     const ORDER_ID_MASK = 1111;
     const STORE_ID = 1;
     const ROOT_PATH = "/restaurant-store-keeper";
-    const PUBLIC_PATH = "http://localhost/apps/restaurant/restaurant-store-keeper";
-    // const PUBLIC_PATH = "http://localhost:3000";
+    // const PUBLIC_PATH = "http://localhost/apps/restaurant/restaurant-store-keeper";
+    const PUBLIC_PATH = "http://localhost:3000";
 
     const config = {
         CURRENT_BASE_URL: CURRENT_BASE_URL,
