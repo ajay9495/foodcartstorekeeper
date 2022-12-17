@@ -21,13 +21,13 @@ export default function useSharedConfig(){
     const ORDER_ID_MASK = 1111;
     const STORE_ID = 1;
     
-    // const ROOT_PATH = "/apps/restaurant/restaurant-store-keeper";    
-    // const SERVICE_WORKER_PATH = "https://www.homeshope.shop/apps/restaurant/restaurant-store-keeper/ServiceWorker.js";
-    // const SERVICE_WORKER_SCOPE = "https://www.homeshope.shop/apps/restaurant/restaurant-store-keeper/";
-
     const ROOT_PATH = "/apps/restaurant/restaurant-store-keeper";    
-    const SERVICE_WORKER_PATH = "http://localhost:3000/apps/restaurant/restaurant-store-keeper/ServiceWorker.js";
-    const SERVICE_WORKER_SCOPE = "http://localhost:3000/apps/restaurant/restaurant-store-keeper/";
+    const SERVICE_WORKER_PATH = "https://www.homeshope.shop/apps/restaurant/restaurant-store-keeper/ServiceWorker.js";
+    const SERVICE_WORKER_SCOPE = "https://www.homeshope.shop/apps/restaurant/restaurant-store-keeper/";
+
+    // const ROOT_PATH = "/apps/restaurant/restaurant-store-keeper";    
+    // const SERVICE_WORKER_PATH = "http://localhost:3000/apps/restaurant/restaurant-store-keeper/ServiceWorker.js";
+    // const SERVICE_WORKER_SCOPE = "http://localhost:3000/apps/restaurant/restaurant-store-keeper/";
 
 
     const config = {
