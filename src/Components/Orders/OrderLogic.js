@@ -23,6 +23,8 @@ export default function useOrdersLogic(){
     const {setLocalUserData,getLocalUserData} = useLocalStorage();
     const dispatch = useDispatch();
 
+    let USER_DATA = getLocalUserData();
+
     useEffect(()=>{
 
         api.getOrderPlacedData()
@@ -41,7 +43,7 @@ export default function useOrdersLogic(){
 
         setDialogueState({isVisible: false,order_id: "" });
 
-        api.changeOrderState({"order_id":orderId})
+        api.changeOrderState({"order_id":orderId, "store_id": USER_DATA.store_id})
         .then((data)=>{     processChangeOrderStatusResponse(data)  })
         .catch((err)=>{     api.processApiError(err)                });
 

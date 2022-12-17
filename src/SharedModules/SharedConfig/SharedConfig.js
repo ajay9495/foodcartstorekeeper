@@ -20,9 +20,15 @@ export default function useSharedConfig(){
 
     const ORDER_ID_MASK = 1111;
     const STORE_ID = 1;
-    const ROOT_PATH = "/restaurant-store-keeper";
-    // const PUBLIC_PATH = "http://localhost/apps/restaurant/restaurant-store-keeper";
-    const PUBLIC_PATH = "http://localhost:3000";
+    
+    // const ROOT_PATH = "/apps/restaurant/restaurant-store-keeper";    
+    // const SERVICE_WORKER_PATH = "https://www.homeshope.shop/apps/restaurant/restaurant-store-keeper/ServiceWorker.js";
+    // const SERVICE_WORKER_SCOPE = "https://www.homeshope.shop/apps/restaurant/restaurant-store-keeper/";
+
+    const ROOT_PATH = "/apps/restaurant/restaurant-store-keeper";    
+    const SERVICE_WORKER_PATH = "http://localhost:3000/apps/restaurant/restaurant-store-keeper/ServiceWorker.js";
+    const SERVICE_WORKER_SCOPE = "http://localhost:3000/apps/restaurant/restaurant-store-keeper/";
+
 
     const config = {
         CURRENT_BASE_URL: CURRENT_BASE_URL,
@@ -31,7 +37,8 @@ export default function useSharedConfig(){
         ORDER_ID_MASK: ORDER_ID_MASK,
         STORE_ID: STORE_ID,
         ROOT_PATH: ROOT_PATH,
-        PUBLIC_PATH: PUBLIC_PATH
+        SERVICE_WORKER_SCOPE: SERVICE_WORKER_SCOPE,
+        SERVICE_WORKER_PATH: SERVICE_WORKER_PATH
     }
 
 

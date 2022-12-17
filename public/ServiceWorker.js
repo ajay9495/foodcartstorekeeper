@@ -1,6 +1,6 @@
 
 
-const cacheName = 'v12';
+const cacheName = 'v1';
 const API_HOST_NAME = "homeshope.xyz";
 let fetch_url = "";
 let url = {};
@@ -25,7 +25,6 @@ this.addEventListener('activate',(event)=>{
                     
                     if(existingCacheName != cacheName){
                         
-
                         return caches.delete(existingCacheName);
 
                     }
@@ -37,10 +36,6 @@ this.addEventListener('activate',(event)=>{
 
 
 });
-
-
-
-
 
 
 this.addEventListener('fetch',(event)=>{
